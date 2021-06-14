@@ -1,0 +1,11 @@
+runtime: nodejs14
+
+handlers:
+  #serve with all static files with urls ending with a file extensions
+- url: /(.*\..+)$
+  static_files: build/\1
+  upload: build/(.*\..+)$
+
+- url: /.*
+  static_files: build/index.html
+  upload: build/index.html
